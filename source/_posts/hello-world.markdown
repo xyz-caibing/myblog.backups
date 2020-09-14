@@ -3,7 +3,7 @@ layout: post
 title: "Hello World"
 date: 2020-09-09 20:39
 comments: true
-reward: true
+reward: false
 top: true
 brief: ""
 tags: 
