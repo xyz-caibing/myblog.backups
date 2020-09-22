@@ -59,7 +59,7 @@ docker images ls [仓库名[:标签]]
 
 docker images ls -f since=仓库名:标签
 
-docker images ls -f label=com.example.version0.1
+docker images ls -f label=com.example.version=0.1
 ```
 * 以特定格式显示，我们可能只是对表格的结构不满意，希望自己组织列；或者不希望有标题，这样方便其它程序解析结果等，这就用到了 Go 的模板语法。
 ```
