@@ -17,7 +17,7 @@ key: "docker"
 docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
 
 ```
-> *注意 这里的仓库名是两段式名称，即<用户名>/<软件名>。对于Docker Hub，如果不给出用户名，则默认为library，也就是官方镜像。
+> 注意：这里的仓库名是两段式名称，即<用户名>/<软件名>。对于Docker Hub，如果不给出用户名，则默认为library，也就是官方镜像。
 
 ### 列出镜像
 * 可以通过 docker images [ls] 列出已经下载的所有顶层镜像。其命令格式为：
@@ -59,7 +59,7 @@ docker images ls [仓库名[:标签]]
 
 docker images ls -f since=仓库名:标签
 
-docker images ls -f label=com.example.version=0.1
+docker images ls -f label=com.example.version=0.1...
 ```
 * 以特定格式显示，我们可能只是对表格的结构不满意，希望自己组织列；或者不希望有标题，这样方便其它程序解析结果等，这就用到了 Go 的模板语法。
 ```
@@ -68,3 +68,29 @@ docker images ls --format "{{.ID}}: {{.Repository}}"
 docker images ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
 ```
 
+### 删除本地镜像
+* 如果要删除本地镜像，可以使用docker images rm 命令，其格式为：
+```markdown
+docker images rm [选项] <镜像1> [<镜像2> ...]
+```
+> 注意：其中，<镜像> 可以是 镜像短ID、镜像长ID、镜像名 或者 镜像摘要。镜像的唯一标识是镜像ID和镜像摘要
+* 用 docker images ls 命令来配合 docker image ls -q ，比如我们需要删除所有仓库名为redis的镜像 或 删除所有在mongo:3.2之前的镜像：
+```
+docker images rm $(docker images ls -q redis)
+
+docker images rm $(docker iamges ls -q -f before=mongo:3.2)
+```
+> 充分利用你的想象力和 Linux 命令行的强大，你可以完成很多非常赞的功能。
+
+
+### 容器操作
+
+... 敬请期待 ...
+
+### 理解镜像的构成
+
+... 敬请期待 ...
+
+### 使用Dockerfile定制镜像
+
+### 镜像构建工作原理
