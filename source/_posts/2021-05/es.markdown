@@ -67,7 +67,7 @@ curl -X<VERB> '<PROTOCOL>://<HOST>:<PORT>/<PATH>?<QUERY_STRING>' -d '<BODY>'
 * create index
 ```
 PUT
-http://120.78.200.175:9200/test
+http://120.78.*.*:9200/test
 Request Headers
 content-type: application/json; charset=UTF-8
 Bodyraw (json)
@@ -88,7 +88,7 @@ Bodyraw (json)
 * add data
 ```
 POST
-http://120.78.200.175:9200/test/_doc/2
+http://120.78.*.*:9200/test/_doc/2
 Request Headers
 content-type: application/json; charset=UTF-8
 Bodyraw (json)
@@ -100,7 +100,7 @@ Bodyraw (json)
 * delete index
 ```
 DEL
-http://120.78.200.175:9200/test
+http://120.78.*.*:9200/test
 Request Headers
 content-type: application/json; charset=UTF-8
 Bodyraw (json)
@@ -109,7 +109,7 @@ None
 * _delete_by_query data
 ```
 POST
-http://120.78.200.175:9200/test/_delete_by_query
+http://120.78.*.*:9200/test/_delete_by_query
 Request Headers
 content-type: application/json; charset=UTF-8
 Bodyraw (json)
